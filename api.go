@@ -5,6 +5,8 @@ import (
 	"encoding/json"
 	"math/rand"
 	"net/http"
+
+	"github.com/AnimeshRy/reddit-api/types"
 )
 
 type PriceResponse struct {
@@ -50,7 +52,7 @@ func (s *JSONAPIServer) handleFetchPrice(ctx context.Context, w http.ResponseWri
 		return err
 	}
 
-	priceResp := PriceResponse{
+	priceResp := types.PriceResponse{
 		Price:  price,
 		Ticker: ticker,
 	}
