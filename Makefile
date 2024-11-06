@@ -1,5 +1,5 @@
 build:
-	go build -o bin/priceFetcher
+	go build -o bin/reddit-api
 
 run: build
-	./bin/priceFetcher
+	./bin/reddit-api
