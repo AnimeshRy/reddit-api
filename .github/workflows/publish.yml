@@ -8,9 +8,12 @@ on:
 jobs:
   publish-reddit-api-docker-image:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v2
@@ -25,9 +28,3 @@ jobs:
           context: .
           push: true
           tags: ghcr.io/animeshry/reddit-api:${{ github.sha }} # Use commit hash as tag (unique versioning)
-
-
-      # Optional: Run container for testing purposes (if necessary)
-      # - name: Run Docker container for testing
-      #   run: |
-      #     docker run ghcr.io/AnimeshRy/reddit-api:${{ github.sha }}
