@@ -24,7 +24,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghcr.io/animeshRy/reddit-api:${{ github.sha }} # Use commit hash as tag (unique versioning)
+          tags: ghcr.io/animeshry/reddit-api:${{ github.sha }} # Use commit hash as tag (unique versioning)
 
 
       # Optional: Run container for testing purposes (if necessary)
